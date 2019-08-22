@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/alexisljn/symfony-api.svg?branch=master)](https://travis-ci.com/alexisljn/symfony-api)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
