@@ -2,6 +2,8 @@ sudo: required
 
 services: docker
 
+language: php
+
 before_install:
   - cp .env.test.dist .env
   - docker-compose up -d
