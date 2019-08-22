@@ -11,6 +11,10 @@ doctrine:
             type: service
             id: doctrine.result_cache_provider
 
+    dbal:
+        driver: 'pdo_pgsql'
+        charset: utf8
+
 services:
     doctrine.result_cache_provider:
         class: Symfony\Component\Cache\DoctrineProvider
