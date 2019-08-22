@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello{% endblock %}
+
+{% block body %}
+
+    {% for user in users %}
+        <h1><a href="{{ path('profile',{'id':user.id}) }}">{{ user.firstname }} {{ user.email }}</a></h1>
+        <a href="{{ path('user_remove', {'id':user.id}) }}">Supprimer l'utilisateur</a>
+      {#   {% for article in user.articles %}
+            <p>{{ article.name }}</p>
+        {% endfor %} #}
+    {% endfor %}
+{% endblock %}

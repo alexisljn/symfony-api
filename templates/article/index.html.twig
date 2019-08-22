@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
+    <h1>Articles Published</h1>
+    <ul>
+        {% for article in articles %}
+            <li>{{ article.name }}</li>
+            <li>Crée le: {{ article.createdAt | date }}</li>
+            <li>Description: {{ article.content| nl2br }}</li>
+            <li>Expire le: {{ article.expiredAt | date }}</li>
+            {% if article.imageUrl %}
+                <li>{{ article.imageUrl }}</li>
+            {%  endif %}
+            {% if article.user %}
+                <li>User: <a href="{{ path('profile',{'id':article.user.id}) }}">{{ article.user.firstname }}</a></li>
+            {%  endif %}
+            <li>-----------------------</li>
+        {% endfor %}
+    </ul>
+
+
+
+
+
+
+    <!-- <h1>Articles Not published</h1>
+    <ul>
+       {# {% for article in articlesNotPublished %}
+            <li>{{ article.name }}</li>
+            <li>Crée le: {{ article.createdAt | date }}</li>
+            <li>Description: {{ article.content| nl2br }}</li>
+            <li>Expire le: {{ article.expiredAt | date }}</li>
+            {% if article.imageUrl %}
+                <li>{{ article.imageUrl }}</li>
+            {%  endif %}
+            <li>-----------------------</li>
+        {% endfor %}
+    </ul>
+    <h1>Articles expired</h1>
+    <ul>
+        {% for article in articlesExpired %}
+            <li>{{ article.name }}</li>
+            <li>Crée le: {{ article.createdAt | date }}</li>
+            <li>Description: {{ article.content| nl2br }}</li>
+            <li>Expire le: {{ article.expiredAt | date }}</li>
+            {% if article.imageUrl %}
+                <li>{{ article.imageUrl }}</li>
+            {%  endif %}
+            <li>-----------------------</li>
+        {% endfor %}
+    </ul> --> #}
+{% endblock %}
